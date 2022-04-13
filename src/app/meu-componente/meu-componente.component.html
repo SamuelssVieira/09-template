@@ -1,0 +1,40 @@
+<br>
+
+<p>Exemplo de ngIf</p>
+
+
+<div *ngIf="this.exibirTexto" class="alert alert-primary" role="alert">
+    Faculdade Reges!!!!
+  </div>
+
+  <div *ngIf="this.exibirTexto" class="alert alert-secondary" role="alert">
+    Tópicos avançados em programação!!
+  </div>
+
+  <button type="button" (click)="mostrarOcultar()" class="btn btn-primary">{{this.textoBotao}}</button>
+
+  <br><br>
+
+  <p>Exemplo de ngFor!</p>
+
+  <button type="button" (click)="exibirTabela()" class="btn btn-success">Esconder Tabela</button>
+
+  <table class="table table-striped" *ngIf="this.esconderTabela">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Universo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let heroi of herois">
+        <th scope="row">{{heroi.id}}</th>
+        <td>{{heroi.nome}}</td>
+        <td>{{heroi.universo}}</td>
+
+      </tr>
+     
+    </tbody>
+  </table>
